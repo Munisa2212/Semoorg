@@ -13,8 +13,9 @@ async function bootstrap() {
     .setDescription('The cats API description')
     .setVersion('1.0')
     .build();
-  const documentFactory = () => SwaggerModule.createDocument(app, config);
-  SwaggerModule.setup('api', app, documentFactory);
+    const document = SwaggerModule.createDocument(app, config);
+    SwaggerModule.setup('api', app, document);
+    
 
   app.enableCors({
     origin: 'https://semoorg-front.vercel.app',
